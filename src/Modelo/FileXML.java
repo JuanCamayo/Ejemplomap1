@@ -5,6 +5,7 @@
  */
 package Modelo;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
@@ -14,6 +15,7 @@ import java.util.Map;
 import org.jdom2.Attribute;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
 
@@ -28,9 +30,11 @@ public class FileXML {
         boolean t = false;
 
         try {
+            
+            //se crea la etiqueta
             Element clientes = new Element("Clientes");
             Document doc = new Document(clientes);
-
+//un metodo que recorra el mapa
             Iterator<Map.Entry<Integer, LinkedList<Cliente>>> it;
             it = m.entrySet().iterator();
             while (it.hasNext()) {
@@ -70,14 +74,29 @@ xmlOutput.output(doc,new FileWriter("fileClientes.xml"));
     }
 
      public static Map<Integer,LinkedList<Cliente>> LeerArchivoXML() {
-     Map<Integer , LinkedList<Cliente>> m = new HashMap<>();
+     Map<Integer , LinkedList<Cliente>> m1 = new HashMap<>();
+       
      
+    SAXBuilder builder = new SAXBuilder();
+    File FileXML = new File( "archivo.xml" );
+    
+    
+    
+    try {
+    
+    
+    
+    } catch(IOException ){
+    
+    
+    
+    
+    
+    }
      
-     
-     
-     
-     
-     
+      return m1;
      
      }
+     
+    
 }
