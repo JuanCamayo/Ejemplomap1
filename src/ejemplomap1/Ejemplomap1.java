@@ -6,12 +6,14 @@
 package ejemplomap1;
 
 import Modelo.Cliente;
+import Modelo.FileXML;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.TreeMap;
+import javax.swing.JOptionPane;
 import static jdk.nashorn.internal.objects.NativeArray.map;
 
 /**
@@ -74,6 +76,17 @@ public class Ejemplomap1 {
 //        System.out.println(m2);
 //        System.out.println("______________");
 //        System.out.println(m3);
+
+
+
+
+boolean t = FileXML.crearArchivoXML(map1);
+
+if (t){
+    JOptionPane.showMessageDialog(null, "Archivo creado con exito");
+}
+
+
     }
 
     public static String mostrarDatosMap(Map<Integer, LinkedList<Cliente>> m) {
